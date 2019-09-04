@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+</head>
+<body>
+ <div class="form-group">
+  	{% if messages %}
+  	<ul class="messages">
+  		{% for message in messages %}
+  		<li>
+  			<div class="alert alert-success"> {{ message }} </div>
+  		</li>
+  		{% endfor %}
+  	</ul>
+  	{% endif %}
+  	
+  </div>
+<div style="width: 300px; height: 400px; margin-left: 35%;margin-top: 5%">
+ <form method="POST" action="">{% csrf_token %}
+  <h1 style="font-size: 40px; font-weight: bolder; text-shadow: -5px 2px"><center>LOGIN</center></h1><br>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+</div>
+
+</body>
+</html>
